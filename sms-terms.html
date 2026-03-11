@@ -46,13 +46,15 @@
       }
 
       p,
-      ul {
+      ul,
+      ol {
         line-height: 1.7;
         font-size: 1rem;
         color: rgba(255, 255, 255, 0.9);
       }
 
-      ul {
+      ul,
+      ol {
         padding-left: 1.25rem;
       }
 
@@ -62,6 +64,29 @@
 
       a {
         color: #ffd6d9;
+      }
+
+      .consent-example {
+        background: rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        padding: 1.25rem;
+        margin: 1rem 0;
+      }
+
+      .consent-example label {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+        cursor: pointer;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .consent-example input[type="checkbox"] {
+        margin-top: 0.3rem;
+        flex-shrink: 0;
       }
 
       .updated {
@@ -82,61 +107,113 @@
 
       <h2>Program Description</h2>
       <p>
-        ShiftClick uses SMS messaging solely for two-factor authentication
-        (2FA). When you create an account or sign in to a ShiftClick
-        application, you may receive a one-time verification code via text
-        message to confirm your identity.
+        <strong>ShiftClick</strong> offers an SMS-based two-factor
+        authentication (2FA) program. When you create an account or sign in to a
+        ShiftClick application, you may receive a one-time verification code via
+        text message to confirm your identity. This program is used exclusively
+        for account security and authentication purposes. No marketing,
+        promotional, or advertising messages will ever be sent.
       </p>
 
-      <h2>Opt-In</h2>
+      <h2>Message Types</h2>
       <p>
-        By providing your phone number and requesting a verification code, you
-        consent to receive SMS messages from ShiftClick for authentication
-        purposes. Consent is not a condition of purchase. You may be asked to
-        confirm your opt-in by replying <strong>YES</strong> to an initial
-        message.
+        The only SMS messages you will receive from ShiftClick are:
+      </p>
+      <ul>
+        <li>One-time verification codes for two-factor authentication (2FA)</li>
+        <li>Account security alerts (e.g., password reset verification)</li>
+        <li>Opt-in confirmation messages</li>
+        <li>Responses to HELP or STOP keyword requests</li>
+      </ul>
+
+      <h2>Opt-In &amp; Consent</h2>
+      <p>
+        By providing your phone number during account registration or sign-in,
+        you are opting in to receive 2FA text messages from
+        <strong>ShiftClick</strong>. Your consent is obtained through a clear,
+        unchecked checkbox that you must actively select. Consent is entirely
+        optional and is not a condition of any purchase or use of service. Below
+        is an example of the opt-in language presented during registration:
+      </p>
+      <div class="consent-example">
+        <label>
+          <input type="checkbox" disabled />
+          I agree to receive one-time authentication codes from
+          <strong>ShiftClick</strong> via SMS. Message frequency varies. Message
+          &amp; data rates may apply. Reply STOP to opt out. View our
+          <a href="/sms-terms.html">SMS Terms</a> and
+          <a href="/privacy.html">Privacy Policy</a>.
+        </label>
+      </div>
+      <p>
+        The checkbox is not pre-checked. You must explicitly select it to
+        provide consent.
       </p>
 
       <h2>Message Frequency</h2>
       <p>
         Message frequency varies based on your authentication activity. Messages
-        are only sent when you initiate a sign-in or account verification
-        request. No marketing or promotional messages will be sent.
+        are only sent when you initiate a sign-in, account verification, or
+        password reset request. You will typically receive 1 message per
+        authentication attempt. No recurring or scheduled messages are sent.
       </p>
 
       <h2>Opt-Out</h2>
       <p>
-        You can opt out of SMS messages at any time by replying
-        <strong>STOP</strong> to any message you receive from us. After opting
-        out, you will no longer receive SMS verification codes. You may need to
-        use an alternative authentication method to access your account.
+        You can opt out of SMS messages at any time by texting
+        <strong>STOP</strong> to any message you receive from ShiftClick. You
+        will receive a single confirmation message acknowledging your opt-out
+        request. After opting out, you will no longer receive SMS verification
+        codes and may need to use an alternative authentication method to access
+        your account. You can re-opt in at any time by updating your
+        authentication preferences in your account settings.
       </p>
 
       <h2>Help</h2>
       <p>
-        For help, reply <strong>HELP</strong> to any message or contact us at
+        For assistance, text <strong>HELP</strong> to any message you receive
+        from ShiftClick, or contact us directly at
         <a href="mailto:support@shiftclick.io">support@shiftclick.io</a>.
       </p>
 
       <h2>Message &amp; Data Rates</h2>
       <p>
         Message and data rates may apply. Please contact your wireless carrier
-        for details about your messaging plan.
+        for details about your text messaging plan. ShiftClick is not
+        responsible for any charges from your carrier related to SMS messages.
       </p>
 
       <h2>Supported Carriers</h2>
       <p>
         Supported carriers include but are not limited to AT&amp;T, Verizon,
-        T-Mobile, Sprint, and other major US carriers. Service may not be
-        available on all carriers.
+        T-Mobile, U.S. Cellular, and other major US carriers. Service may not be
+        available on all carriers or in all areas. ShiftClick is not responsible
+        for delayed or undelivered messages.
+      </p>
+
+      <h2>Carrier Liability Disclaimer</h2>
+      <p>
+        Wireless carriers, including but not limited to AT&amp;T, Verizon,
+        T-Mobile, and U.S. Cellular, are not liable for delayed or undelivered
+        messages. Carriers are not responsible for the content of any messages
+        sent through this program. ShiftClick assumes full responsibility for
+        the content of messages sent through our SMS program.
+      </p>
+
+      <h2>Age Restriction</h2>
+      <p>
+        You must be at least 18 years of age to opt in to ShiftClick's SMS
+        program. By opting in, you confirm that you are 18 years of age or
+        older.
       </p>
 
       <h2>Privacy</h2>
       <p>
         Your phone number and related information will not be sold, rented, or
-        shared with third parties for marketing purposes. Phone numbers are
-        collected solely for the purpose of account authentication. For more
-        details, see our
+        shared with third parties or affiliates for marketing or promotional
+        purposes. Phone numbers are collected solely for the purpose of account
+        authentication and security. For full details on how we handle your
+        data, please see our
         <a href="/privacy.html">Privacy Policy</a>.
       </p>
 
