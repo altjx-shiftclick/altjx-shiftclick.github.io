@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create Account - ShiftClick</title>
+    <title>Sign Up - ShiftClick</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <style>
       body {
@@ -40,11 +40,16 @@
         margin-bottom: 1.5rem;
       }
 
-      .form-group {
-        margin-bottom: 1.25rem;
+      form {
+        width: 100%;
       }
 
-      label {
+      .form-group {
+        margin-bottom: 1.25rem;
+        width: 100%;
+      }
+
+      .form-group label {
         display: block;
         font-size: 0.9rem;
         margin-bottom: 0.4rem;
@@ -53,8 +58,7 @@
 
       input[type="text"],
       input[type="email"],
-      input[type="tel"],
-      input[type="password"] {
+      input[type="tel"] {
         width: 100%;
         padding: 0.7rem 0.75rem;
         font-size: 1rem;
@@ -67,15 +71,13 @@
 
       input[type="text"]::placeholder,
       input[type="email"]::placeholder,
-      input[type="tel"]::placeholder,
-      input[type="password"]::placeholder {
+      input[type="tel"]::placeholder {
         color: rgba(255, 255, 255, 0.35);
       }
 
       input[type="text"]:focus,
       input[type="email"]:focus,
-      input[type="tel"]:focus,
-      input[type="password"]:focus {
+      input[type="tel"]:focus {
         outline: none;
         border-color: rgba(255, 255, 255, 0.5);
         background: rgba(255, 255, 255, 0.12);
@@ -90,19 +92,22 @@
       }
 
       .consent-group label {
-        display: flex;
-        align-items: flex-start;
-        gap: 0.5rem;
+        display: grid;
+        grid-template-columns: 20px 1fr;
+        gap: 0.65rem;
         cursor: pointer;
         font-size: 0.85rem;
-        line-height: 1.5;
+        line-height: 1.6;
         color: rgba(255, 255, 255, 0.9);
         margin-bottom: 0;
       }
 
       .consent-group input[type="checkbox"] {
-        margin-top: 0.25rem;
+        width: 18px;
+        height: 18px;
+        margin: 2px 0 0 0;
         flex-shrink: 0;
+        accent-color: #a22c34;
       }
 
       .consent-group a {
@@ -127,17 +132,6 @@
         background-color: #8b2530;
       }
 
-      .footer-text {
-        text-align: center;
-        margin-top: 1.5rem;
-        font-size: 0.85rem;
-        color: rgba(255, 255, 255, 0.5);
-      }
-
-      .footer-text a {
-        color: #ccc;
-        text-decoration: underline;
-      }
     </style>
   </head>
 
@@ -147,7 +141,7 @@
         <img src="logo.png" alt="ShiftClick" />
       </a>
 
-      <h1>Create Account</h1>
+      <h1>Sign Up</h1>
 
       <form onsubmit="return false;">
         <div class="form-group">
@@ -165,30 +159,22 @@
           <input type="tel" id="phone" placeholder="(555) 123-4567" />
         </div>
 
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" placeholder="Create a password" />
-        </div>
-
         <div class="consent-group">
           <label>
             <input type="checkbox" id="sms-consent" />
-            I agree to receive <strong>transactional</strong> SMS messages from
-            <strong>ShiftClick</strong>, including one-time authentication codes
-            and security alerts. No promotional or marketing messages will be
-            sent. Message frequency varies. Message &amp; data rates may apply.
-            Reply STOP to opt out. View our
+            <span>I agree to receive <strong>transactional</strong> SMS messages
+            from <strong>ShiftClick</strong>, including one-time authentication
+            codes and security alerts. No promotional or marketing messages will
+            be sent. Message frequency varies. Message &amp; data rates may
+            apply. Reply STOP to opt out. View our
             <a href="/sms-terms.html">SMS Terms</a> and
-            <a href="/privacy.html">Privacy Policy</a>.
+            <a href="/privacy.html">Privacy Policy</a>.</span>
           </label>
         </div>
 
-        <button type="submit" class="btn">Create Account</button>
+        <button type="submit" class="btn">Sign Up</button>
       </form>
 
-      <p class="footer-text">
-        Already have an account? <a href="#">Sign In</a>
-      </p>
     </div>
   </body>
 </html>
