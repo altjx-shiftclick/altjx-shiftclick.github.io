@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Account - ShiftClick</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <style>
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+        background-color: #1a1a1a;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 2rem 1rem;
+      }
+
+      .container {
+        max-width: 420px;
+        width: 100%;
+      }
+
+      .logo-link {
+        display: block;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .logo-link img {
+        max-width: 180px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group {
+        margin-bottom: 1.25rem;
+      }
+
+      label {
+        display: block;
+        font-size: 0.9rem;
+        margin-bottom: 0.4rem;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      input[type="password"] {
+        width: 100%;
+        padding: 0.7rem 0.75rem;
+        font-size: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.08);
+        color: #fff;
+        box-sizing: border-box;
+      }
+
+      input[type="text"]::placeholder,
+      input[type="email"]::placeholder,
+      input[type="tel"]::placeholder,
+      input[type="password"]::placeholder {
+        color: rgba(255, 255, 255, 0.35);
+      }
+
+      input[type="text"]:focus,
+      input[type="email"]:focus,
+      input[type="tel"]:focus,
+      input[type="password"]:focus {
+        outline: none;
+        border-color: rgba(255, 255, 255, 0.5);
+        background: rgba(255, 255, 255, 0.12);
+      }
+
+      .consent-group {
+        margin: 1.5rem 0;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 8px;
+        padding: 1rem;
+      }
+
+      .consent-group label {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+        cursor: pointer;
+        font-size: 0.85rem;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 0;
+      }
+
+      .consent-group input[type="checkbox"] {
+        margin-top: 0.25rem;
+        flex-shrink: 0;
+      }
+
+      .consent-group a {
+        color: #ccc;
+        text-decoration: underline;
+      }
+
+      .btn {
+        width: 100%;
+        padding: 0.75rem;
+        font-size: 1rem;
+        font-weight: 600;
+        border: none;
+        border-radius: 6px;
+        background-color: #a22c34;
+        color: #fff;
+        cursor: pointer;
+        margin-top: 0.5rem;
+      }
+
+      .btn:hover {
+        background-color: #8b2530;
+      }
+
+      .footer-text {
+        text-align: center;
+        margin-top: 1.5rem;
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      .footer-text a {
+        color: #ccc;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <a href="/" class="logo-link">
+        <img src="logo.png" alt="ShiftClick" />
+      </a>
+
+      <h1>Create Account</h1>
+
+      <form onsubmit="return false;">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="John Doe" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="you@example.com" />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="(555) 123-4567" />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Create a password" />
+        </div>
+
+        <div class="consent-group">
+          <label>
+            <input type="checkbox" id="sms-consent" />
+            I agree to receive <strong>transactional</strong> SMS messages from
+            <strong>ShiftClick</strong>, including one-time authentication codes
+            and security alerts. No promotional or marketing messages will be
+            sent. Message frequency varies. Message &amp; data rates may apply.
+            Reply STOP to opt out. View our
+            <a href="/sms-terms.html">SMS Terms</a> and
+            <a href="/privacy.html">Privacy Policy</a>.
+          </label>
+        </div>
+
+        <button type="submit" class="btn">Create Account</button>
+      </form>
+
+      <p class="footer-text">
+        Already have an account? <a href="#">Sign In</a>
+      </p>
+    </div>
+  </body>
+</html>
