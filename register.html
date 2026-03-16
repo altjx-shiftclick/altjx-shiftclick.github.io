@@ -143,20 +143,20 @@
 
       <h1>Sign Up</h1>
 
-      <form onsubmit="return false;">
+      <form id="signup-form" onsubmit="return handleSubmit(event);">
         <div class="form-group">
           <label for="name">Full Name</label>
-          <input type="text" id="name" placeholder="John Doe" />
+          <input type="text" id="name" placeholder="John Doe" required />
         </div>
 
         <div class="form-group">
           <label for="email">Email Address</label>
-          <input type="email" id="email" placeholder="you@example.com" />
+          <input type="email" id="email" placeholder="you@example.com" required />
         </div>
 
         <div class="form-group">
           <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" placeholder="(555) 123-4567" />
+          <input type="tel" id="phone" placeholder="(555) 123-4567" required />
         </div>
 
         <div class="consent-group">
@@ -172,8 +172,33 @@
           </label>
         </div>
 
+        <p id="form-error" style="display:none; color:#ff6b6b; font-size:0.85rem; margin:0 0 0.75rem;"></p>
+
         <button type="submit" class="btn">Sign Up</button>
       </form>
+
+      <div id="confirmation" style="display:none; text-align:center;">
+        <p style="font-size:1.1rem; line-height:1.6; color:rgba(255,255,255,0.9);">
+          Thank you for signing up! Your consent has been confirmed. You may now
+          receive transactional SMS messages from <strong>ShiftClick</strong>.
+        </p>
+      </div>
+
+      <script>
+        function handleSubmit(e) {
+          e.preventDefault();
+          var error = document.getElementById("form-error");
+          if (!document.getElementById("sms-consent").checked) {
+            error.textContent = "Please check the SMS consent box to continue.";
+            error.style.display = "block";
+            return false;
+          }
+          error.style.display = "none";
+          document.getElementById("signup-form").style.display = "none";
+          document.getElementById("confirmation").style.display = "block";
+          return false;
+        }
+      </script>
 
     </div>
   </body>
