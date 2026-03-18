@@ -12,11 +12,41 @@
           Helvetica, Arial, sans-serif;
         background-color: #1a1a1a;
         color: #fff;
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      nav .logo img {
+        max-width: 140px;
+      }
+
+      nav .links {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      nav .links a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        font-size: 0.95rem;
+      }
+
+      nav .links a:hover {
+        color: #fff;
+      }
+
+      .page-body {
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: 100vh;
-        padding: 2rem 1rem;
+        padding: 3rem 1rem;
       }
 
       .container {
@@ -132,14 +162,42 @@
         background-color: #8b2530;
       }
 
+      footer {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 2rem;
+        text-align: center;
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      footer .footer-links {
+        margin-bottom: 0.75rem;
+      }
+
+      footer .footer-links a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: underline;
+        margin: 0 0.75rem;
+      }
+
     </style>
   </head>
 
   <body>
-    <div class="container">
-      <a href="/" class="logo-link">
+    <nav>
+      <a href="/" class="logo">
         <img src="logo.png" alt="ShiftClick" />
       </a>
+      <div class="links">
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/register.html">Sign Up</a>
+      </div>
+    </nav>
+
+    <div class="page-body">
+    <div class="container">
 
       <h1>Sign Up</h1>
 
@@ -156,7 +214,7 @@
 
         <div class="form-group">
           <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" placeholder="(555) 123-4567" required />
+          <input type="tel" id="phone" placeholder="(555) 123-4567" />
         </div>
 
         <div class="consent-group">
@@ -166,7 +224,7 @@
             from <strong>ShiftClick</strong>, including one-time authentication
             codes and security alerts. No promotional or marketing messages will
             be sent. Message frequency varies. Message &amp; data rates may
-            apply. Reply STOP to opt out. View our
+            apply. Reply HELP for assistance. Reply STOP to opt out. View our
             <a href="/sms-terms.html">SMS Terms</a> and
             <a href="/privacy.html">Privacy Policy</a>.</span>
           </label>
@@ -201,5 +259,15 @@
       </script>
 
     </div>
+    </div>
+
+    <footer>
+      <div class="footer-links">
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/sms-terms.html">SMS Terms</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+      &copy; 2026 ShiftClick. All rights reserved.
+    </footer>
   </body>
 </html>

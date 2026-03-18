@@ -3,27 +3,199 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Logo Page</title>
+    <title>ShiftClick - Short-Term Rentals &amp; Real Estate</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <style>
       body {
         margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        background-color: #a22c34;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+        background-color: #1a1a1a;
+        color: #fff;
       }
 
-      .logo {
-        max-width: 100%;
-        max-height: 100%;
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      nav .logo img {
+        max-width: 140px;
+      }
+
+      nav .links {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      nav .links a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        font-size: 0.95rem;
+      }
+
+      nav .links a:hover {
+        color: #fff;
+      }
+
+      .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 5rem 2rem 4rem;
+      }
+
+      .hero img {
+        max-width: 240px;
+        margin-bottom: 2rem;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+        margin: 0 0 1rem;
+        max-width: 600px;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: rgba(255, 255, 255, 0.85);
+        max-width: 560px;
+        margin: 0 0 2rem;
+      }
+
+      .hero .cta {
+        display: inline-block;
+        padding: 0.75rem 1.75rem;
+        background-color: #a22c34;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 1rem;
+      }
+
+      .hero .cta:hover {
+        background-color: #8b2530;
+      }
+
+      .features {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        padding: 0 2rem 4rem;
+        flex-wrap: wrap;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .feature {
+        flex: 1;
+        min-width: 220px;
+        max-width: 280px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 1.5rem;
+      }
+
+      .feature h3 {
+        margin: 0 0 0.5rem;
+        font-size: 1.1rem;
+      }
+
+      .feature p {
+        margin: 0;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      footer {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 2rem;
+        text-align: center;
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      footer a {
+        color: rgba(255, 255, 255, 0.6);
+        text-decoration: underline;
+      }
+
+      footer .footer-links {
+        margin-bottom: 0.75rem;
+      }
+
+      footer .footer-links a {
+        margin: 0 0.75rem;
       }
     </style>
   </head>
 
   <body>
-    <img src="logo.png" alt="Logo" class="logo" />
-  </body>
+    <nav>
+      <a href="/" class="logo">
+        <img src="logo.png" alt="ShiftClick" />
+      </a>
+      <div class="links">
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/register.html">Sign Up</a>
+      </div>
+    </nav>
 
-  <!-- ShiftClick is an innovative venture specializing in hosting short-term rentals and enhancing real estate opportunities within designated Opportunity Zones. We're committed to creating exceptional spaces for your short-term stays and unlocking the full potential of properties in these promising investment areas. Experience the future of real estate with ShiftClick. -->
+    <div class="hero">
+      <img src="logo.png" alt="ShiftClick" />
+      <h1>Short-Term Rentals &amp; Real Estate in Opportunity Zones</h1>
+      <p>
+        ShiftClick specializes in hosting short-term rentals and enhancing real
+        estate opportunities within designated Opportunity Zones. We create
+        exceptional spaces for short-term stays and unlock the full potential of
+        properties in promising investment areas.
+      </p>
+      <a href="/register.html" class="cta">Get Started</a>
+    </div>
+
+    <div class="features">
+      <div class="feature">
+        <h3>Short-Term Rentals</h3>
+        <p>
+          Professionally managed properties designed for comfortable,
+          high-quality short-term stays.
+        </p>
+      </div>
+      <div class="feature">
+        <h3>Opportunity Zones</h3>
+        <p>
+          Strategic investments in federally designated Opportunity Zones to
+          maximize growth and community impact.
+        </p>
+      </div>
+      <div class="feature">
+        <h3>Property Management</h3>
+        <p>
+          End-to-end property management ensuring every detail is handled for
+          owners and guests alike.
+        </p>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-links">
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/sms-terms.html">SMS Terms</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+      &copy; 2026 ShiftClick. All rights reserved.
+    </footer>
+  </body>
 </html>
