@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign Up - ShiftClick</title>
+    <title>Sign Up for SMS Alerts - ShiftClick</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <style>
       body {
@@ -54,19 +54,17 @@
         width: 100%;
       }
 
-      .logo-link {
-        display: block;
-        text-align: center;
-        margin-bottom: 2rem;
-      }
-
-      .logo-link img {
-        max-width: 180px;
-      }
-
       h1 {
         font-size: 1.5rem;
         text-align: center;
+        margin-bottom: 0.5rem;
+      }
+
+      .page-subtitle {
+        text-align: center;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.95rem;
+        line-height: 1.6;
         margin-bottom: 1.5rem;
       }
 
@@ -121,6 +119,10 @@
         padding: 1rem;
       }
 
+      .consent-group.error {
+        border-color: #ff6b6b;
+      }
+
       .consent-group label {
         display: grid;
         grid-template-columns: 20px 1fr;
@@ -143,6 +145,13 @@
       .consent-group a {
         color: #ccc;
         text-decoration: underline;
+      }
+
+      .consent-error {
+        color: #ff6b6b;
+        font-size: 0.8rem;
+        margin-top: 0.5rem;
+        display: none;
       }
 
       .btn {
@@ -194,7 +203,6 @@
         text-decoration: underline;
         margin: 0 0.75rem;
       }
-
     </style>
   </head>
 
@@ -214,47 +222,48 @@
     <div class="page-body">
     <div class="container">
 
-      <h1>Sign Up</h1>
+      <h1>Sign Up for Real Estate SMS Alerts</h1>
+      <p class="page-subtitle">
+        Register to receive personalized text messages about property
+        opportunities, cash offers, new listings, market updates, and
+        follow-ups related to buying or selling real estate in your area.
+      </p>
 
-      <form id="signup-form" onsubmit="return handleSubmit(event);">
+      <form id="signup-form" action="https://formspree.io/f/mgopyrry" method="POST" onsubmit="return handleSubmit(event);">
         <div class="form-group">
-          <label for="first-name">First Name</label>
-          <input type="text" id="first-name" placeholder="First Name" required />
+          <label for="first-name">First Name <span class="required">*</span></label>
+          <input type="text" id="first-name" name="first_name" placeholder="First Name" required />
         </div>
 
         <div class="form-group">
-          <label for="last-name">Last Name</label>
-          <input type="text" id="last-name" placeholder="Last Name" required />
+          <label for="last-name">Last Name <span class="required">*</span></label>
+          <input type="text" id="last-name" name="last_name" placeholder="Last Name" required />
         </div>
 
         <div class="form-group">
           <label for="phone">Phone <span class="required">*</span></label>
-          <input type="tel" id="phone" placeholder="(555) 123-4567" required />
+          <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required />
         </div>
 
         <div class="form-group">
           <label for="email">Email <span class="required">*</span></label>
-          <input type="email" id="email" placeholder="you@example.com" required />
+          <input type="email" id="email" name="email" placeholder="you@example.com" required />
         </div>
 
-        <div class="consent-group">
+        <div class="consent-group" id="consent-group-sms">
           <label>
-            <input type="checkbox" id="sms-consent-transactional" />
-            <span>I consent to receive transactional messages from
-            <strong>ShiftClick</strong> at the phone number provided. Message
-            frequency may vary. Message &amp; data rates may apply. Reply HELP
-            for help or STOP to opt out.</span>
+            <input type="checkbox" id="sms-consent" name="sms_consent" value="yes" />
+            <span>I consent to receive SMS messages from
+            <strong>ShiftClick</strong> at the phone number provided, including
+            messages about property opportunities, cash offers, new listings,
+            price updates, open house invitations, and follow-up communications
+            related to buying or selling real estate. Message frequency varies
+            (typically 4-8 messages per month). Message &amp; data rates may
+            apply. Reply HELP for help or STOP to cancel. View our
+            <a href="/privacy.html">Privacy Policy</a> and
+            <a href="/terms.html">Terms of Service</a>.</span>
           </label>
-        </div>
-
-        <div class="consent-group">
-          <label>
-            <input type="checkbox" id="sms-consent-marketing" />
-            <span>I consent to receive marketing and promotional messages from
-            <strong>ShiftClick</strong> at the phone number provided. Message
-            frequency may vary. Message &amp; data rates may apply. Reply HELP
-            for help or STOP to opt out.</span>
-          </label>
+          <p class="consent-error" id="consent-error">You must agree to receive SMS messages to sign up.</p>
         </div>
 
         <button type="submit" class="btn">Sign Up</button>
@@ -266,17 +275,56 @@
 
       <div id="confirmation" style="display:none; text-align:center;">
         <p style="font-size:1.1rem; line-height:1.6; color:rgba(255,255,255,0.9);">
-          Thank you for signing up!
+          Thank you for signing up! You will begin receiving real estate
+          alerts and property updates via SMS. You can opt out at any time
+          by replying STOP to any message.
         </p>
       </div>
 
       <script>
         function handleSubmit(e) {
+          var checkbox = document.getElementById("sms-consent");
+          var consentGroup = document.getElementById("consent-group-sms");
+          var consentError = document.getElementById("consent-error");
+
+          if (!checkbox.checked) {
+            e.preventDefault();
+            consentGroup.classList.add("error");
+            consentError.style.display = "block";
+            return false;
+          }
+
+          consentGroup.classList.remove("error");
+          consentError.style.display = "none";
+
           e.preventDefault();
-          document.getElementById("signup-form").style.display = "none";
-          document.getElementById("confirmation").style.display = "block";
+          var form = document.getElementById("signup-form");
+          var formData = new FormData(form);
+
+          fetch(form.action, {
+            method: "POST",
+            body: formData,
+            headers: { "Accept": "application/json" }
+          }).then(function(response) {
+            if (response.ok) {
+              form.style.display = "none";
+              document.getElementById("confirmation").style.display = "block";
+            } else {
+              alert("There was a problem submitting the form. Please try again.");
+            }
+          }).catch(function() {
+            alert("There was a problem submitting the form. Please try again.");
+          });
+
           return false;
         }
+
+        document.getElementById("sms-consent").addEventListener("change", function() {
+          if (this.checked) {
+            document.getElementById("consent-group-sms").classList.remove("error");
+            document.getElementById("consent-error").style.display = "none";
+          }
+        });
       </script>
 
     </div>
