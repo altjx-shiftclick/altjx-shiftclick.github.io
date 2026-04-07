@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign Up for SMS Alerts - ShiftClick</title>
+    <title>Subscribe to SMS Alerts - ShiftClick</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <style>
       body {
@@ -65,6 +65,14 @@
         color: rgba(255, 255, 255, 0.7);
         font-size: 0.95rem;
         line-height: 1.6;
+        margin-bottom: 0.75rem;
+      }
+
+      .form-note {
+        text-align: center;
+        color: rgba(255, 255, 255, 0.62);
+        font-size: 0.85rem;
+        line-height: 1.6;
         margin-bottom: 1.5rem;
       }
 
@@ -85,7 +93,6 @@
       }
 
       input[type="text"],
-      input[type="email"],
       input[type="tel"] {
         width: 100%;
         padding: 0.7rem 0.75rem;
@@ -98,13 +105,11 @@
       }
 
       input[type="text"]::placeholder,
-      input[type="email"]::placeholder,
       input[type="tel"]::placeholder {
         color: rgba(255, 255, 255, 0.35);
       }
 
       input[type="text"]:focus,
-      input[type="email"]:focus,
       input[type="tel"]:focus {
         outline: none;
         border-color: rgba(255, 255, 255, 0.5);
@@ -215,18 +220,22 @@
         <a href="/">Home</a>
         <a href="/about.html">About</a>
         <a href="/contact.html">Contact</a>
-        <a href="/register.html">Sign Up</a>
+        <a href="/register.html">SMS Alerts</a>
       </div>
     </nav>
 
     <div class="page-body">
     <div class="container">
 
-      <h1>Sign Up for Real Estate SMS Alerts</h1>
+      <h1>Subscribe to Real Estate SMS Alerts</h1>
       <p class="page-subtitle">
-        Register to receive personalized text messages about property
+        Subscribe to receive personalized text messages about property
         opportunities, cash offers, new listings, market updates, and
         follow-ups related to buying or selling real estate in your area.
+      </p>
+      <p class="form-note">
+        This form is only for SMS alerts. It does not create an account or
+        subscribe you to email marketing or any other communication channel.
       </p>
 
       <form id="signup-form" action="https://formspree.io/f/mgopyrry" method="POST" onsubmit="return handleSubmit(event);">
@@ -236,24 +245,14 @@
         </div>
 
         <div class="form-group">
-          <label for="last-name">Last Name <span class="required">*</span></label>
-          <input type="text" id="last-name" name="last_name" placeholder="Last Name" required />
-        </div>
-
-        <div class="form-group">
           <label for="phone">Phone <span class="required">*</span></label>
           <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" required />
         </div>
 
-        <div class="form-group">
-          <label for="email">Email <span class="required">*</span></label>
-          <input type="email" id="email" name="email" placeholder="you@example.com" required />
-        </div>
-
         <div class="consent-group" id="consent-group-sms">
           <label>
-            <input type="checkbox" id="sms-consent" name="sms_consent" value="yes" />
-            <span>I consent to receive SMS messages from
+            <input type="checkbox" id="sms-consent" name="sms_consent" value="yes" required />
+            <span>I consent to receive marketing and informational SMS messages from
             <strong>ShiftClick</strong> at the phone number provided, including
             messages about property opportunities, cash offers, new listings,
             price updates, open house invitations, and follow-up communications
@@ -263,10 +262,10 @@
             <a href="/privacy.html">Privacy Policy</a> and
             <a href="/terms.html">Terms of Service</a>.</span>
           </label>
-          <p class="consent-error" id="consent-error">You must agree to receive SMS messages to sign up.</p>
+          <p class="consent-error" id="consent-error">You must check the SMS consent box to subscribe to SMS alerts.</p>
         </div>
 
-        <button type="submit" class="btn">Sign Up</button>
+        <button type="submit" class="btn">Subscribe to SMS Alerts</button>
 
         <div class="form-footer-links">
           <a href="/privacy.html">Privacy Policy</a> | <a href="/terms.html">Terms of Service</a>
@@ -275,8 +274,8 @@
 
       <div id="confirmation" style="display:none; text-align:center;">
         <p style="font-size:1.1rem; line-height:1.6; color:rgba(255,255,255,0.9);">
-          Thank you for signing up! You will begin receiving real estate
-          alerts and property updates via SMS. You can opt out at any time
+          Thank you for subscribing to ShiftClick SMS alerts. You can expect
+          approximately 4 to 8 messages per month and may opt out at any time
           by replying STOP to any message.
         </p>
       </div>
